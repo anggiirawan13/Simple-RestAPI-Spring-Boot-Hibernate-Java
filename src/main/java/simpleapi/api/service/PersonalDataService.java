@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import simpleapi.api.entity.PersonalData;
 import simpleapi.api.repository.PersonalDataRepository;
-
 import java.util.List;
 
 @Service
@@ -13,7 +12,7 @@ public class PersonalDataService {
     private PersonalDataRepository personalDataRepository;
 
     public PersonalData addPersonalData(PersonalData personalData) {
-        return personalDataRepository.save(personalData);
+            return personalDataRepository.save(personalData);
     }
 
     public List<PersonalData> getAllPersonalData()  {
@@ -33,6 +32,6 @@ public class PersonalDataService {
 
     public String deletePersonalDataById(int id) {
         personalDataRepository.deleteById(id);
-        return "Personal Data Removed!";
+        return "Remove Data " + id + " Successfully";
     }
 }

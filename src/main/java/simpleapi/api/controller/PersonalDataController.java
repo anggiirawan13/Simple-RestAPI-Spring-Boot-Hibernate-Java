@@ -3,38 +3,42 @@ package simpleapi.api.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import simpleapi.api.entity.PersonalData;
+import simpleapi.api.repository.PersonalDataRepository;
 import simpleapi.api.service.PersonalDataService;
-
 import java.util.List;
 
 @CrossOrigin
 @RestController
+@RequestMapping("/v1/personalData")
 public class PersonalDataController {
     @Autowired
     private PersonalDataService personalDataService;
 
-    @PostMapping("/addPersonalData")
-    public PersonalData addPersonalData(@RequestBody PersonalData personalData) {
+    @Autowired
+    PersonalDataRepository personalDataRepository;
+
+    @PostMapping("/add")
+    public PersonalData add(@RequestBody PersonalData personalData) {
         return personalDataService.addPersonalData(personalData);
     }
 
-    @GetMapping("/getAllPersonalData")
-    public List<PersonalData> getAllPersonalData() {
+    @GetMapping("/getAll")
+    public List<PersonalData> getAll() {
         return personalDataService.getAllPersonalData();
     }
 
-    @GetMapping("/getPersonalDataById/{id}")
-    public PersonalData getPersonalDataById(@PathVariable int id) {
+    @GetMapping("/getById/{id}")
+    public PersonalData getById(@PathVariable int id) {
         return personalDataService.getPersonalDataById(id);
     }
 
-    @PutMapping("/updatePersonalDataById/{id}")
-    public PersonalData updatePersonalDataById(@RequestBody PersonalData personalData, @PathVariable int id) {
+    @PutMapping("/updateById/{id}")
+    public PersonalData updateById(@RequestBody PersonalData personalData, @PathVariable int id) {
         return personalDataService.updatePersonalDataById(personalData, id);
     }
 
-    @DeleteMapping("deletePersonalDataById/{id}")
-    public String deletePersonalDataById(@PathVariable int id) {
+    @DeleteMapping("/deleteById/{id}")
+    public String deleteById(@PathVariable int id) {
         return personalDataService.deletePersonalDataById(id);
     }
 
