@@ -2,6 +2,8 @@
 
 ~ git clone https://github.com/Mr-Cloud13/Simple-RestAPI-Spring-Boot-Hibernate-Java
 
+~ open src/main/resources/application.properties and setup your connection to database
+
 # POSTMAN
 
 ~ POST DATA
