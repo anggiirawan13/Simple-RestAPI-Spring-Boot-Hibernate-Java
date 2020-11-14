@@ -6,7 +6,7 @@
 
 ~ POST DATA
 
-        url = http://localhost:{YOUR PORT}/addPersonalData
+        url = http://localhost:{YOUR PORT}/v1/personalData/add
         
         {
           "name": "Mr. Cloud"
@@ -14,15 +14,15 @@
         
 ~ GET ALL DATA
 
-        url = http://localhost:{YOUR PORT}/getAllPersonalData
+        url = http://localhost:{YOUR PORT}/v1/personalData/getAll
         
 ~ GET DATA BY ID
 
-        url = http://localhost:{YOUR PORT}/getPersonalDataById/{ID DATA}
+        url = http://localhost:{YOUR PORT}/v1/personalData/getById/{ID DATA}
         
 ~ UPDATE DATA BY ID
 
-        url = http://localhost:{YOUR PORT}/updatePersonalDataById/{ID DATA}
+        url = http://localhost:{YOUR PORT}/v1/personalData/updateById/{ID DATA}
         
         
         {
@@ -31,4 +31,4 @@
         
 ~ DELETE DATA BY ID
 
-        url = http://localhost:{YOUR PORT}/deletePersonalDataById/{ID DATA}
+        url = http://localhost:{YOUR PORT}/v1/personalData/deleteById/{ID DATA}
